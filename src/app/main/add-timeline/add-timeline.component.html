@@ -1,0 +1,58 @@
+<app-header></app-header>
+<div class="container">
+  <h2>添加新文字</h2>
+  <form role="form" #addFrm="ngForm">
+    <div class="form-group ">
+      <label class="control-label" for="desc">内容</label>
+      <textarea [(ngModel)]="desc"
+                name="desc"
+                #descRef="ngModel"
+                required
+                class="form-control" id="desc" cols="30" rows="10"
+                placeholder="任何内容......名言请加“”">
+
+      </textarea>
+      <!--<div *ngIf="descRef.errors?.required" class="alert alert-info" role="alert">请输入内容</div>-->
+
+    </div>
+    <div class="form-group ">
+      <label class="control-label" for="from">出处</label>
+      <input type="text" class="form-control" id="from"
+             name="from"
+             [(ngModel)]="from"
+             required
+             #fromRef="ngModel"
+             placeholder="内容来源于......书名请加《》，其他请坐相应的标识"
+
+      >
+      <!--<div *ngIf="fromRef.errors?.required" class="alert alert-info" role="alert">请输入出处</div>-->
+    </div>
+    <div class="form-group ">
+      <label class="control-label" for="other">其他</label>
+      <textarea name="other"
+                [(ngModel)]="other"
+                class="form-control"
+                id="other"
+                placeholder="个人感受或者其他需要记录的内容"
+                cols="30" rows="5"></textarea>
+    </div>
+    <div class="form-group ">
+      <label class="control-label" for="pic">图片</label>
+      <input class="form-control" type="text" [(ngModel)]="pic" id="pic" name="pic">
+      <!--<input id="pic" class="file" type="file"-->
+             <!--[(ngModel)]="pic"-->
+             <!--name="pic"-->
+             <!--multiple data-min-file-count="1">-->
+      <br>
+    </div>
+    <div class="form-group ">
+      <button class="btn btn-primary" (click)="addArticles(addFrm.value)" id="save">保存</button>
+      <div *ngIf="errorMsg" class="alert alert-warning" role="alert">
+        {{errorMsg}}
+      </div>
+    </div>
+  </form>
+</div>
+
+
+

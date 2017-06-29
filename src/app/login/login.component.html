@@ -1,0 +1,43 @@
+<div id="wrapper" class="login-page">
+  <div id="login_form" class="form">
+    <form class="register-form"  #registformRef="ngForm">
+      <input type="text" placeholder="用户名"
+             id="username"
+             required
+             name="username" />
+      <input type="password" placeholder="密码" id="pwd"
+             [(ngModel)]="pwd" name="pwd" />
+      <input type="text" placeholder="电子邮件" id="r_emial"/>
+      <button id="create">创建账户</button>
+      <p class="message">已经有了一个账户? <a onclick="toggle()">立刻登录</a></p>
+    </form>
+    <form class="login-form" #loginformRef="ngForm">
+      <input type="text" placeholder="用户名" id="user_name"
+             required
+             [(ngModel)]="username"
+             name="username"
+             #nameRef="ngModel"
+      />
+      <span *ngIf="nameRef.errors?.required" class="alert alert-info" role="alert">请输入用户名</span>
+      <input type="password" placeholder="密码" id="password"
+             [(ngModel)]="pwd" name="pwd"/>
+      <button id="login"
+              (click)="login(loginformRef.value)"
+      >登　录</button>
+      <p class="message">还没有账户? <a onclick="toggle()">立刻创建</a></p>
+    </form>
+  </div>
+</div>
+<script>
+//  console.log($('form').val())
+//  function tog(){
+//    $('form').animate({
+//      height: 'toggle',
+//      opacity: 'toggle'
+//    }, 'slow')
+//  }
+//  $('.message a').click(function () {
+//    console.log('......')
+//    ;
+//  });
+</script>
