@@ -8,11 +8,16 @@ import { FormsModule } from '@angular/forms';
 
 
 import { MainComponent } from './main.component';
-import { MainContentComponent } from './main-content/main-content.component';
 import { MainSidebarComponent } from './main-sidebar/main-sidebar.component';
 import { MainService } from './main.service';
 import {HeaderComponent} from "./header/header.component";
 import {AddTimelineComponent} from "./add-timeline/add-timeline.component";
+// import {TypeComponent} from "./type/type.component";
+import {ShortComponent} from "./short/short.component";
+import {ArticleComponent} from "./article/article.component";
+import { FoodComponent } from './food/food.component';
+import { PhotoComponent } from './photo/photo.component';
+import { MusicComponent } from './music/music.component';
 import {MainRoutingModule} from "./main-routeing.module";
 
 @NgModule({
@@ -20,14 +25,19 @@ import {MainRoutingModule} from "./main-routeing.module";
     CommonModule,
     FormsModule,
     HttpModule,
-    MainRoutingModule
+    MainRoutingModule,
   ],
   declarations: [
     MainComponent,
-    MainContentComponent,
     MainSidebarComponent,
     HeaderComponent,
-    AddTimelineComponent
+    AddTimelineComponent,
+    // TypeComponent,
+    ShortComponent,
+    ArticleComponent,
+    FoodComponent,
+    PhotoComponent,
+    MusicComponent
   ],
   providers: [
     {provide: 'mainService', useClass: MainService}

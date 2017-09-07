@@ -1,13 +1,10 @@
-<div class="container">
-  <div class="page-header text-center">
-    <h1 id="timeline">读书笔记</h1>
-  </div>
+<div class="">
   <ul class="timeline">
     <li *ngFor="let a of articles;let i=index" [class.timeline-inverted]="i%2==1">
       <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record"
                                                 [class.invert]="i%2==1"
                                                 rel="tooltip"
-                                                title="11 hours ago via Twitter"></i></a></div>
+                                                title="{{a.uptime | date :'short' }}"></i></a></div>
       <div class="timeline-panel">
         <div class="timeline-heading">
           <img class="img-responsive" *ngIf="a.pic" [src]="a.pic"/>

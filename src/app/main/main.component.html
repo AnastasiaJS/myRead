@@ -1,8 +1,17 @@
-<app-header ></app-header>
-<app-main-content
-></app-main-content>
-<!-- end of content -->
-<app-main-sidebar></app-main-sidebar>
-<!-- end of sidebar -->
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+		<app-header ></app-header>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-10 column">
+		<router-outlet>
+		</router-outlet>
+		</div>
+		<div class="col-md-2 column">
+		<app-main-sidebar></app-main-sidebar>
 
-
+		</div>
+	</div>
+</div>

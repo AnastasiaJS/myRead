@@ -41,14 +41,24 @@ export class AddTimelineComponent implements OnInit {
               this.other = res.json()[0].other;
             }
           })
+      }else{
+        this.id='';
+        this.from = '';
+        this.desc = '';
+        this.pic = '';
+        this.other = '';
       }
 
     });
   }
 
   addArticles(data) {
-    if (!data.desc || !data.from) {
+    if (!data.desc) {
       this.errorMsg = '请输入内容';
+      return false;
+    }
+    if(!data.from){
+      this.errorMsg = '请输入出处';
       return false;
     }
     if(this.type=='ad'){

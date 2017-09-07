@@ -4,12 +4,12 @@ import {Articles} from '../../domain/entities';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 
 @Component({
-  selector: 'app-main-content',
-  templateUrl: './main-content.component.html',
-  styleUrls: ['./main-content.component.css'],
+  selector: 'app-short',
+  templateUrl: './short.component.html',
+  styleUrls: ['./short.component.css'],
   providers:[MainService]
 })
-export class MainContentComponent implements OnInit {
+export class ShortComponent implements OnInit {
 
   articles:Articles[] = [];
   // @Input()
@@ -28,11 +28,12 @@ export class MainContentComponent implements OnInit {
   getArticles(){
     this.service.getArticles()
       .then(articles=>{
-        this.articles=articles;
+        this.articles=articles.sort((a,b)=>b.uptime-a.uptime);
       })
   }
   delArticles(id){
-    this.service.delArticles(id);
+    if(confirm('确定删除吗？'))
+      this.service.delArticles(id);
   }
   // goModify(arti){
   //   this.router.navigate(['add:m']);

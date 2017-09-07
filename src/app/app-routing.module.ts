@@ -3,27 +3,20 @@
  */
 import { NgModule }     from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {TypeComponent} from './type/type.component'
 import {LoginComponent} from "./login/login.component";
+import { MainComponent } from './main/main.component';
 import {AddTimelineComponent} from "./main/add-timeline/add-timeline.component";
-import {AuthGuardService} from "./core/auth-guard.service";
+import { AuthGuardService } from './core/auth-guard.service';
+
 const routes: Routes = [
   {
-    path: '',
-    redirectTo:'main',
-    pathMatch:'full'
-  },
-  {
-    path:'type',
-    component:TypeComponent,
+    path: 'main',
+    canActivate: [AuthGuardService],
+    component: MainComponent
   },
   {
     path:'login',
     component:LoginComponent,
-  },
-  {
-    path:'add',
-    redirectTo:'add/-1'
   },
   {
     path:'**',
@@ -39,7 +32,10 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(
+      routes,
+      // { enableTracing: true }//显示导航的生命周期
+      )
   ],
   exports: [
     RouterModule

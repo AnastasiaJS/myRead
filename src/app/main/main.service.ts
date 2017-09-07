@@ -27,7 +27,8 @@ export class MainService {
       pic: data.pic,
       from:data.from,
       other:data.other,
-      userId:1
+      userId:1,
+      uptime:new Date()
     };
     return this.http
       .post(this.api_url, JSON.stringify(article), {headers: this.headers})

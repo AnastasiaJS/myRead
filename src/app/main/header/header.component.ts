@@ -20,7 +20,8 @@ export class HeaderComponent implements OnInit {
   }
 
   logout(){
-    localStorage.removeItem('userId')
-    localStorage.removeItem('username')
+    localStorage.removeItem('userId');
+    localStorage.removeItem('username');
+    this.username=null;
   }
 }

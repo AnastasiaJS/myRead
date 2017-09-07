@@ -8,6 +8,7 @@ export class Articles {
   from:string;
   other:string;
   userId:number;
+  uptime:string;
 }
 export class User {
   userId:string;
