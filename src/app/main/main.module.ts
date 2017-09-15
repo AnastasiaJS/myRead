@@ -12,7 +12,6 @@ import { MainSidebarComponent } from './main-sidebar/main-sidebar.component';
 import { MainService } from './main.service';
 import {HeaderComponent} from "./header/header.component";
 import {AddTimelineComponent} from "./add-timeline/add-timeline.component";
-// import {TypeComponent} from "./type/type.component";
 import {ShortComponent} from "./short/short.component";
 import {ArticleComponent} from "./article/article.component";
 import { FoodComponent } from './food/food.component';
@@ -32,7 +31,6 @@ import {MainRoutingModule} from "./main-routeing.module";
     MainSidebarComponent,
     HeaderComponent,
     AddTimelineComponent,
-    // TypeComponent,
     ShortComponent,
     ArticleComponent,
     FoodComponent,

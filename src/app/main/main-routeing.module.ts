@@ -4,7 +4,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main.component';
-import {TypeComponent} from "./type/type.component";
 import {ShortComponent} from "./short/short.component";
 import {ArticleComponent} from "./article/article.component";
 import { FoodComponent } from './food/food.component';
@@ -21,7 +20,7 @@ const routes: Routes = [
     canActivate: [AuthGuardService],
     component: MainComponent,
     children: [
-      {path:'',component: ShortComponent},
+      { path:'',redirectTo:'short',pathMatch:'full'},
       { path: 'short',component: ShortComponent },
       { path: 'article', component: ArticleComponent },
       { path: 'food', component: FoodComponent },

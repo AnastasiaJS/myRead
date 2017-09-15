@@ -82,6 +82,7 @@ export class AddTimelineComponent implements OnInit {
         .then(res=>{
           if(res.ok){
             alert('修改成功！');
+            this.router.navigate(['main']);
           }
         })
     }
